@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memperkenalkan: Virtual Cards 2.0 - Haiisweep Blog</title>
+
+        <!-- SEO Core -->
+    <meta name="description" content="Memperkenalkan Virtual Cards 2.0 dari Haiisweep: kartu virtual sekali pakai, Merchant Lock, dan Auto-Destroy Timer untuk belanja online lebih aman, anti kebocoran data & tagihan trial yang tidak diinginkan.">
+    <meta name="keywords" content="Virtual Cards 2.0, kartu virtual sekali pakai, one-time virtual card, merchant lock, auto destroy timer, keamanan belanja online, kartu debit virtual, kartu virtual haiisweep, kartu virtual visa mastercard, proteksi data kartu, anti phishing, anti data breach, belanja online aman, langganan trial aman, kontrol limit transaksi, fitur kartu digital, product release haiisweep, update fitur haiisweep">
+    <meta name="author" content="haidar">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://haiisweep.vercel.app/virtual-card.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Memperkenalkan: Virtual Cards 2.0 - Haiisweep Blog">
+    <meta property="og:description" content="Kartu virtual generasi baru untuk belanja online tanpa was-was: Single-Use, Merchant Lock, Auto-Destroy Timer, dan kontrol limit transaksi.">
+    <meta property="og:url" content="https://haiisweep.vercel.app/virtual-card.html">
+    <meta property="og:site_name" content="Haiisweep">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=1200&auto=format&fit=crop">
+    <meta property="article:published_time" content="2026-01-18">
+    <meta property="article:section" content="Product">
+    <meta property="article:tag" content="Virtual Card">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Product Release">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Memperkenalkan: Virtual Cards 2.0 - Haiisweep Blog">
+    <meta name="twitter:description" content="Belanja online lebih aman dengan Virtual Cards 2.0: Single-Use, Merchant Lock, Auto-Destroy Timer, dan kontrol limit.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Favicons (opsional tapi disarankan) -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0d6efd">
+
+    <!-- Performance Hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://i.pravatar.cc" crossorigin>
+
+    <!-- Structured Data (Rich Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://haiisweep.vercel.app/#organization",
+          "name": "Haiisweep",
+          "url": "https://haiisweep.vercel.app/",
+          "logo": "https://haiisweep.vercel.app/favicon-32x32.png"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://haiisweep.vercel.app/#website",
+          "name": "Haiisweep",
+          "url": "https://haiisweep.vercel.app/",
+          "inLanguage": "id-ID"
+        },
+        {
+          "@type": "Article",
+          "@id": "https://haiisweep.vercel.app/virtual-card.html#article",
+          "headline": "Memperkenalkan Virtual Cards 2.0: Revolusi Keamanan Belanja Online Tanpa Was-was",
+          "name": "Memperkenalkan: Virtual Cards 2.0 - Haiisweep Blog",
+          "description": "Pembaruan fitur Virtual Cards 2.0: Single-Use, Merchant Lock, Auto-Destroy Timer, dan kontrol limit untuk transaksi online lebih aman.",
+          "inLanguage": "id-ID",
+          "datePublished": "2026-01-18",
+          "dateModified": "2026-01-18",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://haiisweep.vercel.app/virtual-card.html"
+          },
+          "image": [
+            "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=1200&auto=format&fit=crop"
+          ],
+          "author": {
+            "@type": "Person",
+            "name": "haidar",
+            "url": "https://haiisweep.vercel.app/"
+          },
+          "publisher": { "@id": "https://haiisweep.vercel.app/#organization" },
+          "articleSection": "Product",
+          "keywords": [
+            "Virtual Cards 2.0",
+            "kartu virtual sekali pakai",
+            "merchant lock",
+            "auto destroy timer",
+            "keamanan belanja online"
+          ]
+        }
+      ]
+    }
+    </script>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-dark: #3046b5;
+            --text-dark: #1e1e2f;
+            --light-blue: #f0f4ff;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            background-color: #f9fbfd;
+        }
+
+        /* Navbar & General */
+        .navbar {
+            padding: 1rem 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .btn-pill { border-radius: 50rem; }
+        
+        /* Article Typography */
+        .article-header h1 {
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--text-dark);
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.9;
+            color: #4a4a65;
+        }
+
+        .article-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .article-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        /* List Styling inside article */
+        .article-content ul, .article-content ol {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* TOC Styling */
+        .toc-container {
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+
+        .toc-title {
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+        }
+
+        #toc-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+            margin-bottom: 0;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        #toc-list li a {
+            text-decoration: none;
+            color: #555;
+            display: block;
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        #toc-list li a:hover { color: var(--primary-color); padding-left: 5px; }
+        #toc-list li.toc-h3 { padding-left: 1.5rem; font-size: 0.9rem; color: #777; }
+
+        /* Blockquote */
+        blockquote {
+            background: var(--light-blue);
+            border-left: 5px solid var(--primary-color);
+            margin: 2.5rem 0;
+            padding: 2rem;
+            font-style: italic;
+            font-weight: 500;
+            border-radius: 0 15px 15px 0;
+            font-size: 1.2rem;
+        }
+
+        /* Read Also Box */
+        .read-also {
+            border-left: 4px solid #ffc107;
+            padding: 1.2rem;
+            margin: 2.5rem 0;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .read-also strong { white-space: nowrap; color: #ffc107; }
+        .read-also a { text-decoration: none; color: var(--text-dark); font-weight: 700; border-bottom: 2px solid #ffc107; }
+        .read-also a:hover { color: var(--primary-color); border-color: var(--primary-color); }
+
+        /* Promo Banner WhatsApp */
+        .promo-banner {
+            background: linear-gradient(135deg, #1e1e2f 0%, #2b2b40 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3.5rem 0;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .promo-banner:hover { transform: translateY(-5px); color: white; }
+        .promo-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(67, 97, 238, 0.2) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        /* Author Bio */
+        .author-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: 4rem;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        /* FAQ */
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .accordion-button:focus { box-shadow: none; border-color: rgba(67, 97, 238, 0.2); }
+
+        /* Share Buttons */
+        .share-btn {
+            width: 45px; height: 45px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 50%; color: white; text-decoration: none;
+            transition: all 0.3s; margin-right: 0.8rem; font-size: 1.2rem;
+        }
+        .share-btn:hover { transform: translateY(-3px); color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .bg-wa { background-color: #25D366; }
+        .bg-fb { background-color: #1877F2; }
+        .bg-tw { background-color: #000; }
+        .bg-li { background-color: #0A66C2; }
+        .bg-copy { background-color: #6c757d; }
+
+        /* Related Articles Card */
+        .blog-card { transition: transform 0.3s, box-shadow 0.3s; background: #fff; height: 100%; }
+        .blog-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important; }
+        .blog-img-wrapper img { height: 220px; object-fit: cover; width: 100%; transition: transform 0.5s; }
+        .blog-card:hover .blog-img-wrapper img { transform: scale(1.1); }
+        
+        /* Captions & Images */
+        figure img { border-radius: 15px; width: 100%; }
+        figcaption { text-align: center; font-size: 0.9rem; color: #888; margin-top: 0.8rem; font-style: italic; }
+
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="fas fa-broom me-2"></i>Haiisweep
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="features.html">Feature</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold text-primary" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <a href="#" class="btn btn-primary btn-pill px-4 d-none d-lg-block">Get Started</a>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 120px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb small">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="breadcrumb-item"><a href="blog.html" class="text-decoration-none text-muted">Blog</a></li>
+                        <li class="breadcrumb-item active text-primary fw-bold" aria-current="page">Product Update</li>
+                    </ol>
+                </nav>
+
+                <header class="article-header mb-5">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill fw-bold border border-primary border-opacity-25">Product Release</span>
+                    <h1 class="mb-4 display-5">Memperkenalkan Virtual Cards 2.0: Revolusi Keamanan Belanja Online Tanpa Was-was</h1>
+                    
+                    <div class="article-meta d-flex align-items-center flex-wrap gap-3 pt-2 border-top mt-4 pt-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="https://i.pravatar.cc/150?img=12" class="rounded-circle" width="30" height="30" alt="Author">
+                            <span>Budi Santoso</span>
+                        </div>
+                        <span class="d-none d-md-block border-end h-50 mx-2"></span>
+                        <div class="d-flex align-items-center text-muted">
+                            <i class="far fa-calendar me-2"></i> Jan 18, 2026
+                        </div>
+                        <div class="d-flex align-items-center text-muted">
+                            <i class="far fa-clock me-2"></i> 3 min read
+                        </div>
+                    </div>
+                </header>
+
+                <figure class="mb-5 position-relative">
+                    <img src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=1200&auto=format&fit=crop" class="img-fluid shadow-lg" alt="Virtual Cards 2.0 Interface">
+                    <figcaption class="caption">Tampilan antarmuka Virtual Cards 2.0 dengan fitur One-Time Use.</figcaption>
+                </figure>
+
+                <div class="toc-container">
+                    <div class="toc-title" data-bs-toggle="collapse" data-bs-target="#tocContent" aria-expanded="true">
+                        <span><i class="fas fa-list-ul me-2 text-primary"></i> Daftar Isi</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="collapse show" id="tocContent">
+                        <ul id="toc-list">
+                            </ul>
+                    </div>
+                </div>
+
+                <article class="article-content">
+                    <p>
+                        Pernahkah Anda merasa ragu saat harus memasukkan detail kartu debit Anda di situs web belanja yang baru pertama kali Anda kunjungi? Atau mungkin Anda pernah mengalami mimpi buruk langganan layanan *trial* gratis yang tiba-tiba menagih biaya tahunan tanpa notifikasi?
+                    </p>
+                    <p>
+                        Di era digital yang semakin canggih, kejahatan siber seperti *phishing*, *skimming* online, dan kebocoran data (*data breach*) menjadi ancaman nyata bagi kesehatan finansial kita. Data dari laporan keamanan siber tahun 2025 menunjukkan kenaikan kasus pencurian data kartu kredit sebesar 40% dibandingkan tahun sebelumnya.
+                    </p>
+                    <p>
+                        Menjawab keresahan tersebut, tim Haiisweep dengan bangga meluncurkan inovasi terbaru kami: <strong>Virtual Cards 2.0</strong>. Ini bukan sekadar kartu digital biasa, melainkan benteng pertahanan lapis ganda untuk setiap transaksi online Anda.
+                    </p>
+
+                    <h2 id="apa-itu-virtual-cards">Apa itu Virtual Cards 2.0?</h2>
+                    <p>
+                        Virtual Cards 2.0 adalah fitur yang memungkinkan pengguna Haiisweep membuat kartu debit digital secara instan melalui aplikasi. Berbeda dengan kartu fisik yang nomornya permanen, kartu virtual ini bersifat dinamis. Anda bisa membuat, menggunakan, dan menghancurkan kartu ini dalam hitungan detik.
+                    </p>
+                    <p>
+                        Bayangkan Anda memiliki kartu "sekali pakai" atau "burner card". Anda menggunakannya untuk membeli barang di satu *marketplace*, dan setelah transaksi selesai, kartu tersebut tidak berlaku lagi. Bahkan jika data kartu tersebut dicuri oleh *hacker*, mereka tidak akan bisa menggunakannya karena kartu sudah tidak valid.
+                    </p>
+
+                    <div class="read-also">
+                        <i class="fas fa-shield-alt text-warning fs-4"></i>
+                        <div>
+                            <strong>Baca Juga:</strong>
+                            <a href="blog-security.html">5 Tanda Website Belanja Online Tidak Aman (Phishing)</a>
+                        </div>
+                    </div>
+
+                    <h2 id="fitur-unggulan">Fitur Unggulan yang Wajib Anda Coba</h2>
+                    <p>
+                        Dalam pembaruan versi 2.0 ini, kami menyematkan tiga kemampuan utama yang paling banyak diminta oleh komunitas pengguna Haiisweep:
+                    </p>
+                    
+                    <h3 id="mode-single-use">1. Mode Single-Use (Sekali Pakai)</h3>
+                    <p>
+                        Fitur ini adalah primadona keamanan. Kartu ini akan otomatis hancur (expired) segera setelah satu transaksi berhasil dilakukan. Sangat cocok untuk berbelanja di situs web yang keamanannya meragukan atau website luar negeri yang tidak mendukung 3D Secure (OTP).
+                    </p>
+
+                    <h3 id="mode-merchant-lock">2. Merchant Lock (Kunci Pedagang)</h3>
+                    <p>
+                        Kartu ini akan "mengunci" dirinya pada pedagang pertama tempat ia digunakan. Contoh: Jika Anda membuat kartu virtual untuk langganan Netflix, kartu tersebut <strong>hanya</strong> bisa dipakai oleh Netflix. Jika data kartu bocor dan ada yang mencoba memakainya di Amazon atau Spotify, transaksi akan otomatis ditolak.
+                    </p>
+
+                    <h3 id="auto-destroy-timer">3. Auto-Destroy Timer</h3>
+                    <p>
+                        Lupa mematikan langganan *free trial* 7 hari? Dengan Virtual Cards 2.0, Anda bisa mengatur masa aktif kartu. Set kartu agar mati otomatis dalam 24 jam atau 7 hari. Tidak ada lagi tagihan kejutan di akhir bulan!
+                    </p>
+
+                    <blockquote class="blockquote">
+                        "Keamanan bukanlah fitur tambahan, melainkan pondasi utama. Dengan Virtual Cards 2.0, kami memberikan kendali penuh kembali ke tangan pengguna."
+                    </blockquote>
+
+                    <h2 id="cara-menggunakan">Cara Menggunakan Virtual Cards 2.0</h2>
+                    <p>
+                        Proses pembuatan kartu dirancang semudah mungkin, hanya butuh waktu kurang dari 10 detik:
+                    </p>
+                    <ol>
+                        <li>Buka aplikasi Haiisweep dan masuk ke menu <strong>Cards</strong>.</li>
+                        <li>Ketuk tombol <strong>+ New Virtual Card</strong>.</li>
+                        <li>Pilih tipe kartu: <em>Single-Use</em> atau <em>Merchant-Locked</em>.</li>
+                        <li>(Opsional) Atur limit belanja maksimal (misal: Rp 500.000) untuk mencegah *overcharge*.</li>
+                        <li>Selesai! Kartu siap digunakan. Salin nomor kartu langsung ke situs belanja.</li>
+                    </ol>
+
+                    <figure class="my-5">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop" class="img-fluid shadow-sm" alt="Ilustrasi penggunaan kartu di HP">
+                        <figcaption class="caption">Semua pengaturan kartu bisa diakses langsung dari genggaman tangan Anda.</figcaption>
+                    </figure>
+
+                    <h2 id="manfaat-nyata">Manfaat Nyata bagi Pengguna</h2>
+                    <p>
+                        Selain keamanan, fitur ini juga membantu manajemen keuangan. Dengan memisahkan kartu untuk langganan (subscription) dan belanja impulsif, Anda bisa melacak pengeluaran dengan lebih rapi. Laporan mutasi di aplikasi Haiisweep juga akan menampilkan logo *merchant* secara otomatis untuk setiap kartu virtual yang berbeda.
+                    </p>
+
+                    <a href="https://wa.me/6281234567890?text=Halo%20Haiisweep,%20saya%20tertarik%20dengan%20Virtual%20Cards%202.0" target="_blank" class="promo-banner shadow-lg">
+                        <div class="position-relative z-1 d-flex flex-column align-items-center">
+                            <div class="bg-white text-dark rounded-circle p-3 mb-3 shadow-sm">
+                                <i class="fab fa-whatsapp fa-2x text-success"></i>
+                            </div>
+                            <h3 class="fw-bold mb-2">Ingin Demo Langsung?</h3>
+                            <span class="btn btn-light text-primary fw-bold rounded-pill px-5 py-3 shadow-sm">Chat Tim Support <i class="fas fa-comment-alt ms-2"></i></span>
+                        </div>
+                    </a>
+
+                    <div class="read-also">
+                        <i class="fas fa-wallet text-warning fs-4"></i>
+                        <div>
+                            <strong>Baca Juga:</strong>
+                            <a href="cara-menabung-efektif-genZ.html">5 Cara Menabung Efektif untuk Gen Z (Hemat Tanpa Sengsara)</a>
+                        </div>
+                    </div>
+
+                    <h2 id="kesimpulan">Kesimpulan</h2>
+                    <p>
+                        Di dunia di mana data adalah komoditas berharga, melindungi informasi finansial Anda adalah prioritas mutlak. Virtual Cards 2.0 dari Haiisweep bukan hanya sekadar fitur canggih, tapi juga ketenangan pikiran (*peace of mind*). Belanja online tidak perlu lagi disertai rasa was-was akan pembobolan rekening.
+                    </p>
+                    <p>
+                        Segera update aplikasi Haiisweep Anda ke versi terbaru hari ini dan mulailah pengalaman belanja yang lebih aman, privat, dan terkendali.
+                    </p>
+
+                    <div class="mt-5 mb-5">
+                        <h3 class="fw-bold mb-4">Pertanyaan Umum (FAQ)</h3>
+                        <div class="accordion" id="faqVirtualCard">
+                            <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        <strong>Apakah ada biaya tambahan untuk membuat Virtual Card?</strong>
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqVirtualCard">
+                                    <div class="accordion-body text-muted">
+                                        Tidak ada. Pengguna paket standar bisa membuat hingga 5 kartu aktif gratis. Pengguna Premium bisa membuat kartu *unlimited*.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        <strong>Bagaimana jika saya perlu refund ke kartu yang sudah expired?</strong>
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqVirtualCard">
+                                    <div class="accordion-body text-muted">
+                                        Jangan khawatir! Meskipun kartu virtual sudah dihapus/expired, dana refund dari merchant akan otomatis diteruskan ke saldo utama rekening Haiisweep Anda.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        <strong>Apakah kartu ini bisa dipakai di luar negeri?</strong>
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqVirtualCard">
+                                    <div class="accordion-body text-muted">
+                                        Ya, Virtual Cards Haiisweep menggunakan jaringan global Visa/Mastercard sehingga bisa digunakan di seluruh merchant online internasional.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+                <hr class="my-5 opacity-25">
+
+                <div class="d-flex align-items-center mb-5 flex-wrap gap-2">
+                    <span class="fw-bold me-3 fs-5">Share Article:</span>
+                    <a href="https://wa.me/?text=Fitur%20baru%20keren%20dari%20Haiisweep:%20Kartu%20Virtual%20Sekali%20Pakai!" target="_blank" class="share-btn bg-wa"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="share-btn bg-fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn bg-tw"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="share-btn bg-li"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="share-btn bg-copy" onclick="alert('Link copied to clipboard!')"><i class="fas fa-link"></i></a>
+                </div>
+
+                <div class="author-box d-flex flex-column flex-md-row gap-4 align-items-center align-items-md-start">
+                    <img src="https://i.pravatar.cc/150?img=12" class="rounded-circle shadow-sm" width="100" height="100" alt="Budi Santoso">
+                    <div>
+                        <h5 class="fw-bold">Tentang Penulis: Budi Santoso</h5>
+                        <p class="text-muted small mb-3">
+                            Certified Financial Planner (CFP) yang berdedikasi membantu Gen Z melek finansial. Hobi ngopi tapi tetep cuan. Menulis artikel keuangan di Haiisweep sejak 2023.
+                        </p>
+                        <a href="#" class="text-primary fw-bold text-decoration-none small">Lihat Artikel Lainnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="section-padding mt-5 py-5" style="background-color: #f0f4ff;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h3 class="fw-bold display-6">Artikel Terkait</h3>
+                    <p class="text-muted m-0">Bacaan menarik lainnya untuk Anda.</p>
+                </div>
+                <a href="blog.html" class="btn btn-outline-primary rounded-pill d-none d-md-block">Lihat Semua</a>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-6 col-lg-5">
+                    <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden blog-card">
+                        <div class="blog-img-wrapper position-relative overflow-hidden">
+                            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 z-2">Lifestyle</span>
+                            <img src="https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&w=600&auto=format&fit=crop" class="card-img-top" alt="Menabung">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold mb-2 card-title"><a href="cara-menabung-efektif-genZ.html" class="text-dark text-decoration-none">5 Cara Menabung Efektif untuk Gen Z</a></h5>
+                            <p class="text-muted small mb-3 flex-grow-1">Tips mengatur keuangan tanpa harus mengorbankan gaya hidup dan kopi kekinian Anda.</p>
+                            <a href="cara-menabung-efektif-genZ.html" class="fw-bold text-primary text-decoration-none small">Baca Selengkapnya <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-5">
+                    <div class="card border-0 rounded-4 shadow-sm h-100 overflow-hidden blog-card">
+                        <div class="blog-img-wrapper position-relative overflow-hidden">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-3 z-2">Tutorial</span>
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=600&auto=format&fit=crop" class="card-img-top" alt="Crypto">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold mb-2 card-title"><a href="#" class="text-dark text-decoration-none">Panduan Investasi Crypto Pemula</a></h5>
+                            <p class="text-muted small mb-3 flex-grow-1">Jangan FOMO. Pelajari dasar-dasar blockchain dan cara aman membeli Bitcoin pertama Anda.</p>
+                            <a href="#" class="fw-bold text-primary text-decoration-none small">Baca Selengkapnya <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-4 d-md-none">
+                <a href="blog.html" class="btn btn-outline-primary rounded-pill w-100">Lihat Semua</a>
+            </div>
+        </div>
+    </section>
+
+        <div class="floating-container">
+        <a href="#" class="btn-float btn-up mb-3 shadow" id="btnBackToTop" title="Kembali ke atas">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        
+        <a href="https://wa.me/6281234567890?text=Halo%20Haiisweep,%20saya%20ingin%20bertanya..." target="_blank" class="btn-float btn-wa shadow pulse-anim" title="Chat WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        const btnUp = document.getElementById('btnBackToTop');
+        
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btnUp.classList.add('show');
+            } else {
+                btnUp.classList.remove('show');
+            }
+        };
+        
+        btnUp.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+
+    <footer class="bg-primary text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 pe-lg-5">
+                    <h3 class="fw-bold mb-3"><i class="fas fa-broom me-2"></i>Haiisweep</h3>
+                    <p class="small opacity-75">Banking made simple for the next generation.</p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 text-warning">Product</h6>
+                    <ul class="list-unstyled small opacity-75">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Virtual Cards</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Savings</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="opacity-25 my-4">
+            <div class="text-center small opacity-75">
+                &copy; 2026 Haiisweep Banko. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocList = document.getElementById('toc-list');
+            const headers = document.querySelectorAll('.article-content h2, .article-content h3');
+            
+            if (headers.length === 0) {
+                document.querySelector('.toc-container').style.display = 'none';
+                return;
+            }
+
+            headers.forEach(header => {
+                // Generate ID if missing
+                if (!header.id) {
+                    header.id = header.textContent.toLowerCase()
+                        .replace(/[^a-z0-9]+/g, '-')
+                        .replace(/(^-|-$)/g, '');
+                }
+
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + header.id;
+                a.textContent = header.textContent;
+                
+                // Indent H3
+                if (header.tagName === 'H3') {
+                    li.classList.add('toc-h3');
+                }
+
+                // Smooth scroll functionality
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Optional: Update URL hash without jumping
+                    history.pushState(null, null, this.getAttribute('href'));
+                });
+
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>

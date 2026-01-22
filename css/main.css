@@ -1,0 +1,1445 @@
+/* --- VARIABLES --- */
+:root {
+    /* Mengubah palet Ungu gambar menjadi Biru Brand Haiisweep */
+    --primary-color: #4361ee;   /* Royal Blue (Warna Utama) */
+    --primary-dark: #3046b5;
+    --secondary-color: #f72585; /* Aksen (opsional) */
+    --dark-blue: #2b3a8c;       /* Warna section gelap */
+    --light-blue: #f0f4ff;      /* Warna background section terang */
+    --text-dark: #1e1e2f;
+    --text-muted: #6c757d;
+
+    /* Font Setting */
+    --font-main: 'Outfit', sans-serif;
+
+    /* Global Radius */
+    --radius-xl: 2rem;
+    --radius-pill: 50rem;
+}
+
+/* --- GLOBAL SAFETY (ANTI GLITCH) --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Pastikan media tidak bikin overflow horizontal */
+img, svg, video, canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Long text / URL tidak bikin meyamping */
+p, h1, h2, h3, h4, h5, h6, li, a, span, small, strong, label, div {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* --- UTILITIES & OVERRIDES --- */
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-dark-blue { background-color: var(--dark-blue) !important; }
+.bg-light-blue { background-color: var(--light-blue) !important; }
+.text-primary { color: var(--primary-color) !important; }
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-pill {
+    border-radius: var(--radius-pill);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    background-color: #fff;
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--dark-blue) !important;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    padding-top: 140px; /* Space for fixed navbar */
+    padding-bottom: 80px;
+    background: linear-gradient(180deg, #fff 0%, var(--light-blue) 100%);
+    min-height: 90vh;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+.hero-img {
+    max-width: 80%;
+}
+
+/* Animasi sederhana untuk gambar hero */
+.floating-anim {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.stat-card {
+    top: 20%;
+    right: 10%;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(67, 97, 238, 0.15) !important;
+}
+
+/* --- CARDS & FEATURES --- */
+.rounded-4 { border-radius: 1.5rem !important; }
+.rounded-5 { border-radius: 2rem !important; }
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Agar tinggi card sama rata & tombol selalu di bawah */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Feature Strip Icons */
+.feature-item i {
+    background: rgba(255,255,255,0.2);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Section 4 List */
+.custom-list li {
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+.custom-list li:hover {
+    border-color: var(--primary-color);
+    background-color: #fff !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* --- FOOTER --- */
+footer .form-control:focus {
+    box-shadow: none;
+}
+
+/* --- HERO SPECIFIC --- */
+
+/* Background shape */
+.hero-bg-shape {
+    width: 90%;
+    height: 90%;
+    background-color: #e0e7ff;
+    border-radius: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* Styling Gambar Utama (Rasio 1:1) */
+.hero-img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Wajib Kotak */
+    object-fit: cover;   
+    border-radius: 2rem;
+    animation: floatImage 5s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- FLOATING CARDS (VERSI KECIL) --- */
+.floating-card {
+    position: absolute;
+    z-index: 3;
+    border: 2px solid #fff;
+    background-color: #fff;
+}
+
+/* 1. KARTU KUNING (Kiri Atas) */
+.card-yellow {
+    background-color: #ffd166;
+    top: 15%;
+    left: -20px;      /* Offset agar sedikit keluar dari gambar */
+    width: 120px;     /* Ukuran Kecil */
+    padding: 0.5rem !important; 
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+/* 2. KARTU STATISTIK (Kanan Bawah) */
+.card-stat {
+    bottom: 15%;
+    right: -20px;     /* Offset ke kanan */
+    /* Note: Hapus properti 'left' dari kode sebelumnya jika ada */
+    
+    min-width: 140px; /* Ukuran Kecil */
+    padding: 0.6rem !important;
+    animation: floatCard 7s ease-in-out infinite reverse;
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Utilities Avatar */
+.ms-n2 { margin-left: -8px; }
+.ms-n3 { margin-left: -12px; }
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 991px) {
+    /* Container Gambar Mobile */
+    .col-lg-6.position-relative {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+    
+    /* Batasi tinggi gambar di HP */
+    .hero-img {
+        max-height: 400px; 
+    }
+    
+    /* Reset Kartu Melayang jadi Blok Biasa di HP */
+    .card-yellow, .card-stat {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        width: 100%;
+        max-width: 250px;
+        margin-top: 10px;
+        animation: none !important;
+    }
+}
+
+/* --- SECTION UTILS --- */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- SECTION 2: TESTIMONIAL CARD --- */
+.border-light-blue {
+    border-color: var(--light-blue) !important;
+}
+
+/* --- SECTION 3: STATS CARDS --- */
+.custom-hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* Agar judul di kiri terlihat lebih presisi */
+.display-4 {
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* Styling Khusus Kartu agar mirip "Folder" atau Card UI Modern */
+.custom-folder-card {
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.custom-folder-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon Panah Miring (Pojok Kanan Atas Kartu) */
+.transform-45 {
+    transform: rotate(45deg);
+}
+
+/* Styling Tombol Redeem */
+.btn-light.text-dark {
+    background-color: #f8f9fa;
+    color: #1e1e2f;
+}
+
+.btn-light.text-dark:hover {
+    background-color: #e9ecef;
+}
+
+/* Progress bar warna kuning emas */
+.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+/* Responsive Margin untuk Card ke-2 (Efek Tangga) */
+@media (min-width: 992px) {
+    .ms-lg-4 {
+        margin-left: 3rem !important;
+    }
+}
+
+/* --- SECTION 4: Skip Fees --- */
+.custom-pill-list li {
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Efek saat hover di list item: sedikit maju & shadow lebih tebal */
+.custom-hover-pill:hover {
+    transform: translateX(10px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.15) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* --- SECTION 5: Boost Savings --- */
+.fa-check-circle {
+    font-size: 1.1em;
+}
+
+/* --- SECTION 6: Peace of Mind --- */
+.bg-dark-blue {
+    background-color: #1A1F36 !important;
+}
+
+/* Masking Image agar terlihat menyatu dengan kartu */
+.mask-image {
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* --- FOOTER STYLING --- */
+footer .form-control:focus {
+    box-shadow: none;
+    background-color: #fff;
+}
+
+/* Hover effect untuk link footer */
+.hover-underline:hover {
+    text-decoration: underline !important;
+    opacity: 1 !important;
+}
+
+/* Input Newsletter */
+.input-group.rounded-pill {
+    padding: 5px;
+}
+
+/* --- TESTIMONIALS --- */
+.testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* --- FAQ ACCORDION --- */
+.custom-accordion .accordion-button {
+    background-color: #fff;
+    color: var(--text-dark);
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--primary-color);
+    background-color: #f0f4ff;
+}
+
+.custom-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,0.1);
+}
+
+/* --- FLOATING BUTTONS --- */
+.floating-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.btn-float {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+/* Style Tombol WhatsApp */
+.btn-wa {
+    background-color: #25D366;
+}
+
+.btn-wa:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Style Tombol Back to Top */
+.btn-up {
+    background-color: var(--primary-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.btn-up.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.btn-up:hover {
+    background-color: var(--dark-blue);
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* Animasi Pulse untuk WA agar menarik perhatian */
+.pulse-anim {
+    animation: pulse-shadow 2s infinite;
+}
+
+@keyframes pulse-shadow {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Smooth Scroll untuk seluruh halaman */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================================
+   FINAL MOBILE FIX: 1 KOLOM + ANTI OVERFLOW/GLITCH (WAJIB)
+   ========================================================== */
+
+/* Tablet & HP: paksa semua konten jadi 1 kolom dan hilangkan overflow */
+@media (max-width: 991px) {
+
+    /* Hindari overflow dari container/row bootstrap (glitch umum di mobile) */
+    .container,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Paksa semua grid jadi 1 kolom */
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        flex-direction: column !important;
+    }
+
+    /* Semua kolom bootstrap jadi full width */
+    [class*="col-"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    /* Matikan hover transform di mobile (sering bikin "geser" & overflow) */
+    .card:hover,
+    .custom-hover-card:hover,
+    .testimonial-card:hover,
+    .custom-folder-card:hover,
+    .btn-primary:hover,
+    .btn-up:hover,
+    .btn-wa:hover {
+        transform: none !important;
+    }
+
+    /* HERO: rapikan, proporsional, tidak kepotong */
+    .hero-section {
+        padding-top: 100px;
+        padding-bottom: 60px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    /* Bagian kanan hero (gambar + kartu) jadi stack 1 kolom */
+    .col-lg-6.position-relative {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin-top: 28px;
+        position: relative !important;
+    }
+
+    .hero-img {
+        max-width: 100% !important;
+        width: 100% !important;
+        max-height: 340px;
+        margin: 0 auto 18px auto;
+        object-fit: contain;
+        animation: none !important; /* anti glitch */
+        transform: none !important;
+    }
+
+    /* Background shape: jangan bikin overflow */
+    .hero-bg-shape {
+        width: calc(100% - 24px) !important; /* aman dari padding */
+        max-width: 520px;
+        height: 62%;
+        top: 36%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 28px;
+    }
+
+    /* Kartu floating: jadi normal (relative) dan full width */
+    .floating-card,
+    .card-yellow,
+    .card-stat {
+        position: relative !important;
+        inset: auto !important;   /* reset top/right/bottom/left */
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        transform: none !important;
+        animation: none !important;
+
+        width: 100% !important;
+        max-width: 360px;
+        margin: 0 auto 12px auto;
+        z-index: 2;
+        text-align: left;
+    }
+
+    /* Kartu kuning: rapikan layout horizontal */
+    .card-yellow {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        padding: 14px !important;
+    }
+
+    /* Hilangkan icon panah pojok di kartu kuning biar clean */
+    .card-yellow .fa-arrow-up {
+        display: none !important;
+    }
+
+    /* List hover geser kanan: matikan di mobile biar ga bikin overflow */
+    .custom-hover-pill:hover {
+        transform: none !important;
+    }
+
+    /* Floating buttons: lebih aman di layar kecil */
+    .floating-container {
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .btn-float {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+/* HP kecil: lebih ketat lagi supaya benar-benar aman */
+@media (max-width: 576px) {
+    .section-padding {
+        padding: 56px 0;
+    }
+
+    .hero-img {
+        max-height: 300px;
+    }
+
+    .hero-bg-shape {
+        max-width: 100%;
+        height: 58%;
+        border-radius: 24px;
+    }
+
+    .floating-card,
+    .card-yellow,
+    .card-stat {
+        max-width: 100%;
+    }
+
+    .rounded-5 {
+        border-radius: 1.5rem !important;
+    }
+}
+
+/* --- 1. EXPERT TYPOGRAPHY (Gradient & Fluidity) --- */
+.display-3, .display-4, .display-5 {
+    letter-spacing: -0.03em; /* Tight tracking modern */
+}
+
+/* Class khusus untuk teks gradasi */
+.text-gradient-primary {
+    background: linear-gradient(135deg, #1e1e2f 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ==========================================================
+   GLOBAL SAFETY (ANTI GLITCH) - MOBILE FRIENDLY
+   ========================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img, svg, video, canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* long text tidak bikin meyamping */
+p, h1, h2, h3, h4, h5, h6, li, a, span, small, strong, label, div {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* --- 2. HERO SECTION "ALIVE" --- */
+section.section-padding.pb-0.mt-5 {
+    position: relative;
+    overflow-x: clip; /* lebih aman dari hidden untuk modern browser */
+}
+
+/* Dekorasi background blob */
+section.section-padding.pb-0.mt-5::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(67, 97, 238, 0.1) 0%, rgba(255,255,255,0) 70%);
+    z-index: -1;
+    animation: pulseBlob 10s ease-in-out infinite alternate;
+}
+
+@keyframes pulseBlob {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.1) translate(-20px, 20px); }
+}
+
+/* --- 3. ADVANCED CARD STYLING (Depth & Glassmorphism) --- */
+.card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0,0,0,0.04) !important;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(67, 97, 238, 0.15) !important;
+}
+
+/* Khusus Value Cards (Grid Values) */
+.col-md-6 .card {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efek Hover Fill Background */
+.col-md-6 .card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--primary-color);
+    transition: all 0.4s ease;
+    z-index: -1;
+    opacity: 0.05;
+}
+
+.col-md-6 .card:hover::after {
+    height: 100%;
+}
+
+.col-md-6 .card:hover i {
+    transform: scale(1.2) rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+
+/* --- 4. FLOATING BADGE (Glass Effect) --- */
+.position-absolute.bg-white {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    animation: floatBadge 4s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- 5. TEAM CARDS (Professional Profile) --- */
+.team-card img {
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.team-card:hover img {
+    filter: grayscale(0%);
+    border-radius: 50% !important;
+    transform: scale(0.9);
+}
+
+.team-card h5 {
+    transition: color 0.3s ease;
+}
+
+.team-card:hover h5 {
+    color: var(--primary-color);
+}
+
+/* --- 6. ANIMATION ON LOAD (Entry Animation) --- */
+.container {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================
+   FINAL MOBILE FIX: 1 KOLOM + NO OVERFLOW + NO GLITCH
+   ========================================================== */
+@media (max-width: 991px) {
+
+    /* Hindari overflow dari container/row bootstrap */
+    .container,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Paksa layout grid jadi 1 kolom */
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        flex-direction: column !important;
+    }
+
+    [class*="col-"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    /* Matikan transform hover di mobile (sering bikin "geser" & overflow) */
+    .card:hover,
+    .team-card:hover img,
+    .col-md-6 .card:hover i,
+    .col-md-6 .card:hover::after,
+    .position-absolute.bg-white {
+        transform: none !important;
+    }
+
+    /* Matikan animasi berat di mobile biar tidak glitch */
+    section.section-padding.pb-0.mt-5::before {
+        animation: none !important;
+        width: 420px;
+        height: 420px;
+        top: -60px;
+        right: -180px; /* tetap off-canvas tapi aman */
+    }
+
+    /* Badge absolute: jangan floating di mobile (lebih stabil) */
+    .position-absolute.bg-white {
+        animation: none !important;
+        backdrop-filter: none; /* opsional: beberapa HP glitch blur */
+    }
+
+    /* Animasi container: hilangkan biar halaman tidak "kedip" di HP tertentu */
+    .container {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* HP kecil: makin aman */
+@media (max-width: 576px) {
+    section.section-padding.pb-0.mt-5::before {
+        width: 340px;
+        height: 340px;
+        top: -70px;
+        right: -200px;
+    }
+}
+
+/* =========================================
+   FEATURES PAGE ADVANCED STYLING
+   ========================================= */
+
+/* --- 1. HERO SECTION ENHANCEMENTS --- */
+/* Membuat badge "Our Features" terlihat lebih premium */
+.badge.bg-light-blue {
+    background-color: #eef2ff;
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.15);
+    border: 1px solid rgba(67, 97, 238, 0.1);
+    letter-spacing: 0.5px;
+}
+
+/* --- 2. ICON BOX ANIMATIONS (Pulsing Effect) --- */
+/* Kotak ikon di setiap fitur akan berdenyut halus */
+.icon-box {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+    z-index: 1;
+}
+
+.icon-box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+
+/* Saat di-hover, ikon membesar dan glow menyebar */
+.col-lg-5:hover .icon-box {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.col-lg-5:hover .icon-box::before {
+    width: 160%;
+    height: 160%;
+    opacity: 0; /* Efek ripple menghilang keluar */
+}
+
+/* --- 3. FEATURE IMAGES (Depth & Floating) --- */
+/* Memberikan kedalaman pada gambar fitur */
+.col-lg-6 img.shadow {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important; /* Shadow lebih dramatis */
+    transition: transform 0.5s ease;
+}
+
+/* Gambar akan bergerak sedikit mengikuti arah mouse (simulasi hover) */
+.col-lg-6:hover img.shadow {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Dekorasi background di belakang gambar (Blob putih) */
+.position-absolute.bg-white.rounded-circle {
+    filter: blur(40px); /* Membuatnya jadi glowing blob */
+    opacity: 0.6;
+    animation: pulseGlow 5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.4; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+}
+
+/* --- 4. LIST ITEMS (Checklist Animation) --- */
+/* Ikon centang muncul berurutan saat di-hover container-nya */
+.list-unstyled li {
+    transition: transform 0.3s ease;
+}
+
+.list-unstyled li:hover {
+    transform: translateX(10px); /* Geser ke kanan sedikit */
+}
+
+.list-unstyled li i {
+    transition: transform 0.3s ease;
+}
+
+.list-unstyled li:hover i {
+    transform: scale(1.3); /* Centang membesar */
+}
+
+/* --- 5. COMPARISON TABLE (SaaS Style) --- */
+/* Style tabel yang terlihat seperti "Pricing Table" modern */
+.table-responsive {
+    border-radius: 2rem; /* Sudut tabel sangat bulat */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05); /* Shadow halus */
+    background: #fff;
+    padding: 10px; /* Padding di dalam wrapper */
+}
+
+.custom-table {
+    margin-bottom: 0; /* Hilangkan margin default bootstrap */
+    border: none;
+}
+
+.custom-table th {
+    border-bottom: none;
+    background: transparent;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.custom-table td {
+    border-bottom: 1px solid rgba(0,0,0,0.03); /* Garis pemisah sangat tipis */
+    font-size: 1.05rem;
+}
+
+/* Highlight Kolom Haiisweep (Kolom Tengah) */
+.custom-table tr td:nth-child(2),
+.custom-table tr th:nth-child(2) {
+    background-color: #f8faff; /* Biru sangat pudar */
+    position: relative;
+}
+
+/* Efek "Pop-out" untuk kolom Haiisweep */
+.custom-table tr:first-child th:nth-child(2) {
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.custom-table tr:last-child td:nth-child(2) {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+
+/* Memberikan border halus di sekeliling kolom Haiisweep agar menonjol */
+.custom-table tr th:nth-child(2),
+.custom-table tr td:nth-child(2) {
+    border-left: 2px solid rgba(67, 97, 238, 0.1);
+    border-right: 2px solid rgba(67, 97, 238, 0.1);
+}
+
+.custom-table tr:first-child th:nth-child(2) {
+    border-top: 2px solid rgba(67, 97, 238, 0.1);
+}
+
+.custom-table tr:last-child td:nth-child(2) {
+    border-bottom: 2px solid rgba(67, 97, 238, 0.1);
+}
+
+/* --- 6. INVESTING SECTION (Dark Mode Contrast) --- */
+/* Khusus section gelap, tombolnya harus 'menyala' */
+.bg-dark-blue .btn-warning {
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.4); /* Glow kuning */
+    transition: all 0.3s ease;
+}
+
+.bg-dark-blue .btn-warning:hover {
+    box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+    transform: translateY(-3px);
+    background-color: #ffca2c;
+    color: #000;
+}
+/* =========================================
+   RESPONSIVE TABLE (CARD TRANSFORMATION)
+   ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Hilangkan Header Tabel Asli */
+    .custom-table thead {
+        display: none;
+    }
+
+    /* 2. Ubah Baris (TR) menjadi Kartu */
+    .custom-table tbody tr {
+        display: block;
+        margin-bottom: 1.5rem; /* Jarak antar kartu */
+        border: 1px solid rgba(0,0,0,0.05);
+        border-radius: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    /* 3. Ubah Sel (TD) menjadi Baris Flex */
+    .custom-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.25rem !important; /* Override padding bootstrap */
+        text-align: right;
+        border-bottom: 1px solid #f0f0f0;
+        width: 100% !important; /* Override w-25 */
+    }
+
+    /* Hilangkan border di sel terakhir kartu */
+    .custom-table tbody td:last-child {
+        border-bottom: none;
+    }
+
+    /* 4. Styling Khusus Kolom Pertama (Nama Fitur) sebagai Judul Kartu */
+    .custom-table tbody td:first-child {
+        background-color: #f8f9fa; /* Header kartu abu-abu muda */
+        color: var(--dark-blue);
+        justify-content: center; /* Teks tengah */
+        text-align: center;
+        font-size: 1.1rem;
+        border-bottom: 2px solid rgba(67, 97, 238, 0.1);
+        padding: 1rem !important; /* Reset padding left 5 (ps-5) */
+    }
+
+    /* 5. Trik CSS: Menambahkan Label 'Haiisweep' & 'Bank Lain' via CSS */
+    
+    /* Kolom ke-2 (Haiisweep) */
+    .custom-table tbody td:nth-child(2)::before {
+        content: "Haiisweep"; /* Label muncul otomatis */
+        font-weight: 600;
+        color: var(--primary-color);
+        font-size: 0.9rem;
+    }
+
+    /* Kolom ke-3 (Bank Lain) */
+    .custom-table tbody td:nth-child(3)::before {
+        content: "Bank Lain"; /* Label muncul otomatis */
+        font-weight: 600;
+        color: #6c757d; /* Text muted */
+        font-size: 0.9rem;
+    }
+
+    /* Hapus background highlight desktop pada mode mobile agar bersih */
+    .custom-table tr td:nth-child(2) {
+        background-color: #fff !important;
+        border: none !important;
+    }
+}
+
+/* =========================================
+   BLOG PAGE ADVANCED STYLING
+   ========================================= */
+
+/* --- 1. HERO & SEARCH EXPERIENCE --- */
+/* Animasi background halus di belakang search bar */
+section.section-padding.mt-5.pt-lg-5 {
+    position: relative;
+    overflow: hidden;
+}
+
+section.section-padding.mt-5.pt-lg-5::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(67, 97, 238, 0.08) 0%, rgba(255,255,255,0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Search Bar "Floating" Effect */
+.form-control-lg {
+    height: 65px;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: #fff;
+}
+
+/* Saat input diklik/fokus: Glow effect & Shadow membesar */
+.form-control-lg:focus {
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15); /* Shadow biru pudar */
+    border: 1px solid rgba(67, 97, 238, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Ikon Search ikut berubah warna saat fokus */
+.form-control-lg:focus + .fa-search {
+    color: var(--primary-color) !important;
+}
+
+/* Tombol Search di dalam input */
+.btn-primary.position-absolute {
+    transition: all 0.3s ease;
+}
+
+.btn-primary.position-absolute:hover {
+    transform: translateY(-50%) scale(1.05) !important; /* Membesar sedikit */
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+}
+
+/* --- 2. CATEGORY PILLS (Tactile Feel) --- */
+.btn-white {
+    background: #fff;
+    border: 1px solid #eee;
+    transition: all 0.2s ease;
+}
+
+.btn-white:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+/* Scrollbar styling untuk filter kategori (jika overflow di HP) */
+.d-flex.overflow-auto::-webkit-scrollbar {
+    height: 4px;
+}
+.d-flex.overflow-auto::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* --- 3. PREMIUM BLOG CARDS --- */
+.blog-card {
+    border: 1px solid rgba(0,0,0,0.02) !important; /* Border super tipis */
+    background: #fff;
+    /* Hardware Acceleration untuk performa animasi */
+    will-change: transform, box-shadow; 
+}
+
+/* Efek Hover: Lift Up + Shadow Deep */
+.blog-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Image Wrapper Masking */
+.blog-img-wrapper {
+    height: 240px; /* Sedikit lebih tinggi */
+    position: relative;
+}
+
+/* Gradient Overlay pada Gambar (Agar badge terbaca jelas) */
+.blog-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 30%);
+    pointer-events: none;
+}
+
+/* Efek Zoom Gambar yang Smooth */
+.blog-img-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Easing expert */
+}
+
+.blog-card:hover .blog-img-wrapper img {
+    transform: scale(1.1);
+}
+
+/* --- 4. BADGES (Glassmorphism) --- */
+/* Badge kategori terlihat seperti kaca buram */
+.blog-img-wrapper .badge {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: #000 !important; /* Override warna text jadi hitam agar kontras */
+    font-weight: 600;
+    padding: 0.5em 1em;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    letter-spacing: 0.5px;
+}
+
+/* Khusus badge Lifestyle (Warna kuning jadi aksen border) */
+.badge.bg-warning {
+    border-left: 3px solid #ffc107;
+}
+/* Khusus badge Product (Warna biru) */
+.badge.bg-primary {
+    border-left: 3px solid var(--primary-color);
+}
+/* Khusus badge Tutorial (Warna hijau) */
+.badge.bg-success {
+    border-left: 3px solid #198754;
+}
+
+/* --- 5. TYPOGRAPHY & READ MORE --- */
+.card-title a {
+    background: linear-gradient(to right, var(--primary-color), var(--primary-color));
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s ease;
+    padding-bottom: 2px;
+}
+
+/* Judul bergaris bawah saat hover */
+.blog-card:hover .card-title a {
+    background-size: 100% 2px;
+    color: var(--primary-color) !important;
+}
+
+.learn-more-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* Panah bergerak maju mundur (bouncing) saat hover */
+.blog-card:hover .learn-more-link i {
+    animation: arrowBounce 1s infinite;
+}
+
+@keyframes arrowBounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+/* --- 6. PAGINATION (Modern Circles) --- */
+.page-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% !important; /* Lingkaran sempurna */
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3); /* Glowing shadow */
+    transform: scale(1.1);
+}
+
+.page-item:not(.active) .page-link:hover {
+    background-color: #f0f4ff;
+    color: var(--primary-color);
+    border-color: #e0e7ff;
+}
+
+/* --- 7. ENTRY ANIMATION (Staggered Load) --- */
+/* Kartu muncul satu per satu (Cascade effect) */
+.blog-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+/* Delay berbeda untuk setiap kartu (hardcoded untuk 3 kolom pertama) */
+.col-md-6:nth-child(1) .blog-card { animation-delay: 0.1s; }
+.col-md-6:nth-child(2) .blog-card { animation-delay: 0.2s; }
+.col-md-6:nth-child(3) .blog-card { animation-delay: 0.3s; }
+.col-md-6:nth-child(4) .blog-card { animation-delay: 0.4s; }
+.col-md-6:nth-child(5) .blog-card { animation-delay: 0.5s; }
+.col-md-6:nth-child(6) .blog-card { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   CONTACT PAGE STYLING
+   ========================================= */
+
+/* --- 1. CONTACT CARDS (Hover Effects) --- */
+.contact-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
+    background-color: #fff !important; /* Berubah jadi putih saat hover agar menonjol */
+}
+
+/* Icon box animasi */
+.icon-square {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover .icon-square {
+    transform: scale(1.1) rotate(-5deg);
+    background-color: var(--primary-color) !important;
+    color: #fff !important; /* Icon berubah putih */
+}
+
+/* --- 2. MAP WRAPPER (Overlay Interaction) --- */
+.map-wrapper {
+    position: relative;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.map-wrapper:hover .map-overlay {
+    opacity: 1; /* Munculkan overlay gelap saat hover */
+}
+
+/* --- 3. MODERN FORM STYLING (Floating Labels) --- */
+/* Custom warna label saat input fokus */
+.form-floating > .form-control:focus ~ label {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.form-floating > .form-control:focus {
+    box-shadow: none; /* Hilangkan glow biru default bootstrap */
+    border: 2px solid var(--primary-color) !important; /* Ganti dengan border solid */
+    background-color: #fff !important;
+}
+
+/* Animasi Tombol Submit */
+.btn-primary.btn-lg {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary.btn-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+}
+
+/* Efek Kilau pada tombol saat hover */
+.btn-primary.btn-lg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-primary.btn-lg:hover::after {
+    left: 100%;
+}
